@@ -3,7 +3,7 @@ ILLUST_ID=$1
 echo "Fetching image ${1}..."
 illust_page="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=${ILLUST_ID}"
 image_page=$(curl --cookie .cjar --cookie-jar .cjar "${illust_page}" 2> /dev/null)
-image_regex='_illust_modal.*data-src="(.*?)" class="original-image"'
+image_regex='_illust_modal.*data-src="(.*)" class="original-image"'
 
 if [[ $image_page =~ $image_regex ]]
 then
