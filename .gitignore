@@ -68,3 +68,7 @@ $RECYCLE.BIN/
 
 # Cookie Jar for curl
 .cjar
+
+# Download images
+*.jpg
+*.png
