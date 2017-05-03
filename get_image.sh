@@ -1,3 +1,9 @@
+if [[ $# -lt 1 ]]
+then
+    echo "Usage: get_image.sh illust_id"
+    exit 1
+fi
+
 ILLUST_ID=$1
 
 echo "Fetching image ${1}..."
@@ -14,3 +20,4 @@ else
 fi
 
 wget --cookies=on --load-cookies .cjar --referer="${illust_page}" "${image_url}"
+
