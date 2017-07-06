@@ -1,6 +1,6 @@
 if [[ $# -lt 1 ]]
 then
-    echo "Usage: login.sh your_pixiv_id [your_pixiv_password]"
+    echo "Usage: $0 your_pixiv_id [your_pixiv_password]"
     exit 1
 fi
 if [[ $# -eq 1 ]]

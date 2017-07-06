@@ -1,6 +1,6 @@
 if [[ $# -lt 1 ]]
 then
-    echo "Usage: get_image.sh illust_id"
+    echo "Usage: $0 illust_id"
     exit 1
 fi
 
@@ -19,5 +19,5 @@ else
     exit 1
 fi
 
-wget --cookies=on --load-cookies .cjar --referer="${illust_page}" "${image_url}"
+wget -nc --cookies=on --load-cookies .cjar --referer="${illust_page}" "${image_url}"
 
