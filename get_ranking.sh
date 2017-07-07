@@ -1,7 +1,15 @@
 #! /bin/bash
 
-ranking_json=$(curl --cookie .cjar --cookie-jar .cjar 'https://www.pixiv.net/ranking.php?mode=daily&content=illust&format=json' 2> /dev/null)
-id_regex='"illust_id":([0-9]+),'
+if [[ $# -lt 1 ]]
+then
+    page=1
+else
+    page=$1
+fi
+
+
+ranking_json=$(curl --cookie .cjar --cookie-jar .cjar "https://www.pixiv.net/ranking.php?mode=daily&p=${page}&content=illust&format=json" 2> /dev/null)
+id_regex='"illust_type":"0".*"illust_id":([0-9]+)'
 
 extract() {
     while [[ $1 ]]
